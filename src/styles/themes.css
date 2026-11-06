@@ -1,0 +1,543 @@
+/* NOXI 1.2 | Seven full-interface palettes with coordinated immersive scenes.
+   Deliberately leaves the original Marshmallow Galaxy appearance intact. */
+
+html[data-noxi-theme='marshmallow-galaxy'] {
+  --t-primary: #7955e8;
+  --t-secondary: #ff77c8;
+  --t-ink: #382750;
+  --t-mute: #9280a7;
+  --t-pane: #ffffff;
+  --t-edge: #e7dcef;
+}
+
+html[data-noxi-theme='royal-ember'] {
+  --t-bg:#17191e; --t-sidebar:#1b1e26; --t-pane:#232733; --t-pane-soft:#282e3d;
+  --t-elevated:#303749; --t-edge:#3d4557; --t-ink:#f8f9ff; --t-ink-soft:#d7e1f9;
+  --t-mute:#a0abc0; --t-primary:#3972ff; --t-secondary:#ff8a24; --t-onprimary:#ffffff;
+  --t-hero-a:#202b4c; --t-hero-b:#1a2031; --t-hero-c:#64402c;
+  --t-glow-a:#245beb; --t-glow-b:#ff8a24; --t-glow-c:#608cff;
+  --t-scene-a:#131b39; --t-scene-b:#253a62; --t-scene-c:#302b32;
+  --t-shadow:#080d1a88; --t-text-on-hero:#ffffff;
+  color-scheme:dark;
+}
+html[data-noxi-theme='abyssal-bloom'] {
+  --t-bg:#080f24; --t-sidebar:#0c172d; --t-pane:#132139; --t-pane-soft:#192a41;
+  --t-elevated:#22374e; --t-edge:#294259; --t-ink:#eefdfd; --t-ink-soft:#cbefea;
+  --t-mute:#96bbbf; --t-primary:#39cdb8; --t-secondary:#ffb7d5; --t-onprimary:#06252b;
+  --t-hero-a:#10413f; --t-hero-b:#142842; --t-hero-c:#663f66;
+  --t-glow-a:#39cdb8; --t-glow-b:#ffb7d5; --t-glow-c:#1d8e9d;
+  --t-scene-a:#081b30; --t-scene-b:#12434b; --t-scene-c:#352a50;
+  --t-shadow:#020911a0; --t-text-on-hero:#f8ffff;
+  color-scheme:dark;
+}
+html[data-noxi-theme='punk-inferno'] {
+  --t-bg:#fffaf4; --t-sidebar:#fffdf9; --t-pane:#ffffff; --t-pane-soft:#fff1e7;
+  --t-elevated:#ffe8cd; --t-edge:#f4daca; --t-ink:#442518; --t-ink-soft:#653c2c;
+  --t-mute:#946d58; --t-primary:#eb4228; --t-secondary:#f9d700; --t-onprimary:#ffffff;
+  --t-hero-a:#ffe3cf; --t-hero-b:#ffbfa0; --t-hero-c:#ffd94c;
+  --t-glow-a:#ff4828; --t-glow-b:#f9e400; --t-glow-c:#ff8a34;
+  --t-scene-a:#fff2d9; --t-scene-b:#ffc4aa; --t-scene-c:#fff2b1;
+  --t-shadow:#8f4b2226; --t-text-on-hero:#4a2517;
+  color-scheme:light;
+}
+html[data-noxi-theme='cotton-candy-skies'] {
+  --t-bg:#f7fcff; --t-sidebar:#ffffff; --t-pane:#ffffff; --t-pane-soft:#ecf8ff;
+  --t-elevated:#e0f0ff; --t-edge:#d9e8f5; --t-ink:#263e62; --t-ink-soft:#456081;
+  --t-mute:#7589a7; --t-primary:#168ee0; --t-secondary:#ff3ea5; --t-onprimary:#ffffff;
+  --t-hero-a:#ccedff; --t-hero-b:#acdfff; --t-hero-c:#ffd4ee;
+  --t-glow-a:#75c9ff; --t-glow-b:#ff3ea5; --t-glow-c:#93e3ff;
+  --t-scene-a:#dff4ff; --t-scene-b:#a8dfff; --t-scene-c:#ffe0f3;
+  --t-shadow:#368fcb24; --t-text-on-hero:#263e62;
+  color-scheme:light;
+}
+html[data-noxi-theme='wildwood'] {
+  --t-bg:#10291d; --t-sidebar:#143322; --t-pane:#1c402c; --t-pane-soft:#234b34;
+  --t-elevated:#2a5a3c; --t-edge:#356449; --t-ink:#f6fff3; --t-ink-soft:#d6edce;
+  --t-mute:#a9c7ac; --t-primary:#49b971; --t-secondary:#ff891c; --t-onprimary:#092414;
+  --t-hero-a:#245b35; --t-hero-b:#18462f; --t-hero-c:#70502b;
+  --t-glow-a:#27834b; --t-glow-b:#ff891c; --t-glow-c:#6acf7e;
+  --t-scene-a:#092f22; --t-scene-b:#23613e; --t-scene-c:#383c24;
+  --t-shadow:#030d078f; --t-text-on-hero:#fffef0;
+  color-scheme:dark;
+}
+html[data-noxi-theme='sakura-noir'] {
+  --t-bg:#08080b; --t-sidebar:#0f0f14; --t-pane:#19181f; --t-pane-soft:#232129;
+  --t-elevated:#2e2a34; --t-edge:#3b333c; --t-ink:#ffffff; --t-ink-soft:#f6ebee;
+  --t-mute:#b9abb3; --t-primary:#ffb7c5; --t-secondary:#ffffff; --t-onprimary:#211018;
+  --t-hero-a:#39222e; --t-hero-b:#17151d; --t-hero-c:#4d303e;
+  --t-glow-a:#ffb7c5; --t-glow-b:#ffffff; --t-glow-c:#ee7da5;
+  --t-scene-a:#08080b; --t-scene-b:#382631; --t-scene-c:#13141a;
+  --t-shadow:#000000b0; --t-text-on-hero:#ffffff;
+  color-scheme:dark;
+}
+
+/* All selected themes share semantic styling. This covers every app page and
+   the portal-based fullscreen player without filtering actual album artwork. */
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) {
+  color:var(--t-ink); background:var(--t-bg);
+  --noxi-ink:var(--t-ink); --noxi-muted:var(--t-mute); --noxi-panel:var(--t-pane);
+  --noxi-line:var(--t-edge); --noxi-primary:var(--t-primary); --noxi-shine:var(--t-secondary);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) body {background:var(--t-bg);color:var(--t-ink);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .app-shell {
+  background:radial-gradient(ellipse 70% 65% at 80% -24%,color-mix(in srgb,var(--t-glow-a) 15%,transparent),transparent 75%),var(--t-bg);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .sidebar {
+  background:var(--t-sidebar);border-color:var(--t-edge);box-shadow:4px 0 34px var(--t-shadow);
+  scrollbar-color:var(--t-edge) transparent;
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .logo-mark,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .liked-icon,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .upgrade-star,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-brand-mark {
+  background:linear-gradient(135deg,var(--t-primary),var(--t-secondary));
+  color:var(--t-onprimary);box-shadow:0 6px 19px color-mix(in srgb,var(--t-primary) 24%,transparent);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .logo-word,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-brand,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .section-heading h2,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .page-heading h1,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .playlist-card-bottom h3,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .recent-orbit-card>strong,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-panel h3,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-panel h3,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-panel-head h2,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .setting-row strong,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .account-state strong,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .playing-info-text strong,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .track-title strong,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-chip>strong,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .discover-feature strong,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .playlist-hero-content h1,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .preferences-intro h2,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .sidebar-upgrade strong,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-queue-item strong,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-queue-head h2,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-queue-empty p {color:var(--t-ink);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .logo-dot,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-brand strong span,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-header-center svg,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-art-caption svg,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-footnote span,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .heading-star,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-quote>span {color:var(--t-secondary);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .side-link,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .side-mini-card,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .sidebar-settings,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .top-context,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .top-profile,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .sidebar-upgrade p,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .page-heading>p,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .section-heading p,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .welcome-line,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .side-group-caption,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .side-section-head,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .eyebrow,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .sidebar-footer,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .playing-info-text span,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .playlist-card-bottom p,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .recent-orbit-card>small,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-chip>small,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-panel>p,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-heading,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-quote p,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-footer,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-now-label,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .track-title span,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .track-album,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .track-duration,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .track-index,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .track-heading,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .playlist-hero-content>p,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-panel-head p,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .setting-row p,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-help,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-info,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .account-state>span:last-child,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .preferences-intro p,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .discover-feature p,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .discovery-hint,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .playlist-mini-stats,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-queue-item div>span,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-queue-note,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-queue-empty,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-queue-empty span {color:var(--t-mute);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .sidebar-upgrade,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .preferences-intro,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .playlist-hero,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .discover-feature {
+  background:linear-gradient(112deg,var(--t-hero-a),var(--t-hero-b) 55%,var(--t-hero-c));
+  border-color:var(--t-edge);box-shadow:0 10px 35px var(--t-shadow);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .hero {
+  background:linear-gradient(113deg,var(--t-hero-a),var(--t-hero-b) 51%,var(--t-hero-c));
+  box-shadow:0 12px 38px var(--t-shadow);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .hero h1,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .hero p,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .hero-kicker,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .hero-secondary {color:var(--t-text-on-hero);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .hero h1 em,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .page-heading h1 em {
+  background:linear-gradient(95deg,var(--t-primary),var(--t-secondary));background-clip:text;color:transparent;
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .halo-a {background:color-mix(in srgb,var(--t-glow-b) 49%,transparent);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .halo-b {background:color-mix(in srgb,var(--t-glow-a) 55%,transparent);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .vinyl-center {border-color:var(--t-elevated);background:var(--t-primary);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .hero-primary {
+  background:var(--t-pane);color:var(--t-primary);box-shadow:0 8px 22px var(--t-shadow);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .hero-primary:hover {background:var(--t-elevated);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .side-link:hover,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .side-link.active,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .collection-link:hover,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .side-mini-card:hover {
+  color:var(--t-primary);background:var(--t-pane-soft);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .side-link.active::before {background:var(--t-primary);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .side-divider,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-hr {background:var(--t-edge);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .top-search,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .top-profile,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .history-controls button,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .library-filter,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .library-sort,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .search-large {
+  background:var(--t-pane);border-color:var(--t-edge);color:var(--t-ink-soft);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) input,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) select,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .top-search input,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .library-filter input,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .library-sort select,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .search-large input {
+  color:var(--t-ink);accent-color:var(--t-primary);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) input::placeholder {color:var(--t-mute);opacity:1;}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .history-controls button:hover {color:var(--t-primary);background:var(--t-pane-soft);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .top-profile>svg {background:var(--t-elevated);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .connect-btn,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .search-large button:not(.clear-search),
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-action:not(.danger),
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .view-tabs button.selected,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .playlist-hero-actions .hero-primary {
+  background:var(--t-primary);color:var(--t-onprimary);border-color:var(--t-primary);
+  box-shadow:0 6px 17px color-mix(in srgb,var(--t-primary) 22%,transparent);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .text-link,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .external-spotify,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-doc,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .sidebar-upgrade a,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-open-now:hover .playing-info-text strong {color:var(--t-primary);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-panel {
+  background:linear-gradient(180deg,var(--t-pane),color-mix(in srgb,var(--t-pane) 84%,transparent));
+  border-color:var(--t-edge);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .player-wrap {
+  background:linear-gradient(to bottom,transparent,color-mix(in srgb,var(--t-bg) 94%,transparent) 45%);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .player-bar,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .track-list,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .library-songs,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-panel,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .recent-orbit-card,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .topbar .top-profile {
+  background:var(--t-pane);border-color:var(--t-edge);box-shadow:0 7px 27px var(--t-shadow);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .player-buttons>button,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .volume-icon,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .output-device,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .track-external {color:var(--t-mute);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .player-buttons>button:hover:enabled {color:var(--t-primary);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .player-buttons .player-main-btn,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-main-play {
+  background:linear-gradient(135deg,var(--t-primary),var(--t-secondary));color:var(--t-onprimary);
+  box-shadow:0 8px 25px color-mix(in srgb,var(--t-primary) 38%,transparent);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .track-row:hover,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .library-songs .track-row:hover,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .track-list .track-row:hover,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .search-results .track-row:hover {background:var(--t-pane-soft);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .track-heading,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .track-row,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-queue-item {border-color:var(--t-edge);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .track-play,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-expand-dock,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-discover,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .setting-pill {
+  background:var(--t-pane-soft);color:var(--t-primary);border-color:var(--t-edge);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .track-play:hover:enabled,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-expand-dock:hover {background:var(--t-primary);color:var(--t-onprimary);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .view-tabs button,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .empty-state,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .loading-panel {
+  background:var(--t-pane);border-color:var(--t-edge);color:var(--t-mute);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .empty-state h3 {color:var(--t-ink);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .bottom-feature,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .recent-orbit-play {
+  background:linear-gradient(125deg,var(--t-primary),var(--t-secondary));
+  color:var(--t-onprimary);box-shadow:0 10px 30px var(--t-shadow);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .recent-orbit-art,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .artwork,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .artwork-fallback {background:linear-gradient(135deg,var(--t-hero-b),var(--t-hero-c));}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-chip {
+  background:linear-gradient(135deg,var(--t-pane-soft),var(--t-elevated));border-color:var(--t-edge);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-chip:nth-child(2n) {background:linear-gradient(135deg,var(--t-hero-b),var(--t-pane-soft));}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-chip:nth-child(3n) {background:linear-gradient(135deg,var(--t-pane-soft),var(--t-hero-c));}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-chip>span,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .mood-chip>svg {color:var(--t-primary);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-panel-head,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-info svg,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .discover-feature>svg {color:var(--t-primary);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .account-state,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .scene-choice,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-segments,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-note {
+  background:var(--t-pane-soft);border-color:var(--t-edge);color:var(--t-ink-soft);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-note strong,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .scene-choice strong {color:var(--t-ink);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .scene-choice.selected,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-segments button.selected {
+  background:var(--t-elevated);border-color:var(--t-primary);color:var(--t-primary);
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--t-primary) 30%,transparent);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .scene-choice small,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-segments button {color:var(--t-mute);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .scene-choice.selected small {color:var(--t-ink-soft);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .scene-orbit {
+  background:radial-gradient(circle at 37% 30%,var(--t-secondary),var(--t-primary) 55%,var(--t-pane));
+  box-shadow:0 5px 18px color-mix(in srgb,var(--t-primary) 28%,transparent);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .scene-choice-drift .scene-orbit {
+  background:radial-gradient(circle at 40% 30%,var(--t-glow-c),var(--t-glow-b),var(--t-scene-a));
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .scene-choice-stardust .scene-orbit {
+  background:radial-gradient(circle at 28% 30%,#fff 0 2px,transparent 3px),radial-gradient(circle at 72% 62%,#fff 0 1px,transparent 3px),radial-gradient(circle,var(--t-primary),var(--t-scene-a));
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-action.danger {
+  background:var(--t-pane-soft);color:var(--t-secondary);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .settings-note p,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .scene-choice small {color:var(--t-mute);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .switch span {background:var(--t-elevated);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .switch input:checked+span {background:var(--t-primary);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .switch span::after {background:var(--t-onprimary);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .playlist-track-notice,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .inline-alert {
+  border-color:var(--t-edge);background:var(--t-pane-soft);color:var(--t-ink-soft);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .global-error {background:var(--t-pane);border-color:var(--t-secondary);color:var(--t-ink);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .global-error button {color:var(--t-secondary);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .scroll-page,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .sidebar {scrollbar-color:var(--t-edge) transparent;}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .scroll-page::-webkit-scrollbar-thumb,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .sidebar::-webkit-scrollbar-thumb {background:var(--t-edge);}
+
+/* Fullscreen NOXI overlay, including its optional Up Next drawer. */
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-overlay {
+  background:var(--t-scene-a);color:var(--t-ink);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-details h1,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-artist {color:var(--t-ink);text-shadow:0 1px 15px color-mix(in srgb,var(--t-bg) 14%,transparent);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-album,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-timestamps,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-header-center,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-scene-label,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-footnote,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-scene-switch>span,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-volume,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-volume-icon {color:var(--t-ink-soft);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-eyebrow {color:var(--t-primary);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-live-dot {background:var(--t-secondary);box-shadow:0 0 0 5px color-mix(in srgb,var(--t-secondary) 27%,transparent);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-art-halo {
+  background:linear-gradient(130deg,var(--t-glow-a),var(--t-glow-b));opacity:.53;
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-art-frame {
+  border-color:color-mix(in srgb,var(--t-ink) 75%,transparent);
+  background:linear-gradient(135deg,var(--t-hero-a),var(--t-hero-c));
+  box-shadow:0 22px 55px var(--t-shadow),0 4px 28px color-mix(in srgb,var(--t-primary) 19%,transparent);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-close,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-art-caption,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-queue-trigger,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-scene-switch button {
+  background:color-mix(in srgb,var(--t-pane) 90%,transparent);border-color:var(--t-edge);
+  color:var(--t-ink);box-shadow:0 4px 22px var(--t-shadow);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-close:hover,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-queue-trigger:hover,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-scene-switch button:hover {
+  background:var(--t-pane-soft);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-divider {background:var(--t-edge);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-icon-btn {color:var(--t-ink-soft);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-icon-btn:hover:enabled,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-icon-btn.np-active {
+  background:var(--t-pane-soft);color:var(--t-primary);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-progress input,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-volume input {
+  background:linear-gradient(to right,var(--t-primary),var(--t-secondary) var(--np-progress,0%),color-mix(in srgb,var(--t-ink) 23%,transparent) var(--np-progress,0%),color-mix(in srgb,var(--t-ink) 23%,transparent));
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-progress input::-webkit-slider-thumb,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-volume input::-webkit-slider-thumb,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-progress input::-moz-range-thumb,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-volume input::-moz-range-thumb {
+  border-color:var(--t-primary);background:var(--t-ink);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-scene-switch button[aria-pressed='true'],
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-scene-switch button.noxi-intensity-toggle[aria-pressed='true'] {
+  color:var(--t-onprimary);background:linear-gradient(120deg,var(--t-primary),var(--t-secondary));border-color:var(--t-primary);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-scene-switch button.noxi-intensity-toggle:not([aria-pressed='true']) {
+  background:var(--t-pane-soft);color:var(--t-primary);border-color:var(--t-primary);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-count,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-queue-head>button,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-queue-art-empty {
+  background:var(--t-pane-soft);color:var(--t-primary);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .np-queue-panel {
+  background:color-mix(in srgb,var(--t-pane) 97%,transparent);border-color:var(--t-edge);
+  color:var(--t-ink);box-shadow:0 20px 65px var(--t-shadow);
+}
+
+/* Aurora, Drift and Stardust now use the chosen theme's palette.
+   Existing scene layers and GSAP motion are retained, not replaced. */
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-atmosphere {background:var(--t-scene-a);}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-scene--aurora {
+  background:radial-gradient(ellipse 75% 80% at 9% 64%,color-mix(in srgb,var(--t-glow-a) 43%,transparent),transparent 74%),
+    radial-gradient(ellipse 65% 74% at 85% 75%,color-mix(in srgb,var(--t-glow-b) 40%,transparent),transparent 73%),
+    linear-gradient(115deg,var(--t-scene-a),var(--t-scene-b) 52%,var(--t-scene-c));
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-aurora-wash {
+  background:radial-gradient(ellipse at 45% 20%,color-mix(in srgb,var(--t-glow-c) 18%,transparent),transparent 37%),
+   radial-gradient(ellipse at 55% 95%,color-mix(in srgb,var(--t-glow-b) 27%,transparent),transparent 54%);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-aurora-ribbon--one {
+  background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--t-glow-a) 72%,transparent) 25%,color-mix(in srgb,var(--t-glow-c) 66%,transparent) 55%,color-mix(in srgb,var(--t-glow-b) 72%,transparent) 81%,transparent);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-aurora-ribbon--two {
+  background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--t-glow-b) 80%,transparent) 27%,color-mix(in srgb,var(--t-glow-a) 69%,transparent) 64%,transparent);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-aurora-ribbon--three {
+  background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--t-glow-c) 75%,transparent) 21%,color-mix(in srgb,var(--t-glow-a) 68%,transparent) 63%,color-mix(in srgb,var(--t-glow-b) 52%,transparent),transparent);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-aurora-bloom {
+  background:radial-gradient(ellipse,color-mix(in srgb,var(--t-glow-b) 52%,transparent),transparent 70%);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-scene--drift {
+  background:radial-gradient(ellipse at 21% 65%,color-mix(in srgb,var(--t-glow-c) 36%,transparent),transparent 68%),
+    radial-gradient(ellipse at 85% 20%,color-mix(in srgb,var(--t-glow-b) 33%,transparent),transparent 64%),
+    linear-gradient(120deg,var(--t-scene-b),var(--t-scene-a) 50%,var(--t-scene-c));
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-drift-cloud--a {
+  background:radial-gradient(ellipse,color-mix(in srgb,var(--t-glow-a) 69%,transparent),color-mix(in srgb,var(--t-glow-c) 36%,transparent) 50%,transparent 79%);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-drift-cloud--b {
+  background:radial-gradient(ellipse,color-mix(in srgb,var(--t-glow-b) 66%,transparent),color-mix(in srgb,var(--t-glow-b) 32%,transparent) 51%,transparent 79%);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-drift-cloud--c {
+  background:radial-gradient(ellipse,color-mix(in srgb,var(--t-glow-c) 60%,transparent),color-mix(in srgb,var(--t-glow-a) 36%,transparent) 53%,transparent 79%);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-drift-cloud--d {
+  background:radial-gradient(ellipse,color-mix(in srgb,var(--t-glow-b) 24%,white),color-mix(in srgb,var(--t-glow-c) 33%,transparent) 53%,transparent 79%);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-drift-light--a,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-drift-light--b {
+  background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--t-glow-c) 65%,transparent),color-mix(in srgb,var(--t-glow-b) 50%,transparent),transparent);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-scene--stardust {
+  background:radial-gradient(ellipse 64% 92% at -5% 33%,color-mix(in srgb,var(--t-glow-a) 44%,transparent),transparent 77%),
+    radial-gradient(ellipse 54% 74% at 35% 84%,color-mix(in srgb,var(--t-glow-b) 24%,transparent),transparent 75%),
+    linear-gradient(110deg,var(--t-scene-a),var(--t-scene-b) 46%,var(--t-scene-c));
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-stardust-cloud--a {
+  background:radial-gradient(ellipse,color-mix(in srgb,var(--t-glow-a) 63%,transparent),color-mix(in srgb,var(--t-glow-c) 44%,transparent) 52%,transparent 78%);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-stardust-cloud--b {
+  background:radial-gradient(ellipse,color-mix(in srgb,var(--t-glow-b) 52%,transparent),transparent 76%);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-stardust-glimmer--a,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-stardust-glimmer--b {
+  background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--t-glow-a) 64%,transparent),color-mix(in srgb,var(--t-glow-b) 52%,transparent),transparent);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-speck {
+  background:var(--t-ink);box-shadow:0 0 9px var(--t-ink),0 0 21px color-mix(in srgb,var(--t-primary) 55%,transparent);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-speck:nth-child(4n) {
+  background:var(--t-secondary);box-shadow:0 0 12px var(--t-secondary),0 0 26px color-mix(in srgb,var(--t-secondary) 67%,transparent);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-energy-glow--violet {
+  background:radial-gradient(ellipse,color-mix(in srgb,var(--t-glow-a) 74%,transparent),color-mix(in srgb,var(--t-glow-c) 42%,transparent) 48%,transparent 75%);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-energy-glow--rose {
+  background:radial-gradient(ellipse,color-mix(in srgb,var(--t-glow-b) 67%,transparent),color-mix(in srgb,var(--t-glow-b) 30%,transparent) 52%,transparent 78%);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-energy-glow--ice {
+  background:radial-gradient(ellipse,color-mix(in srgb,var(--t-glow-c) 65%,transparent),transparent 75%);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-energy-flare--one,
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-energy-flare--two {
+  background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--t-glow-a) 80%,transparent),color-mix(in srgb,var(--t-glow-b) 74%,transparent),transparent);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-ambient-bars i {
+  background:linear-gradient(to top,var(--t-primary),var(--t-glow-c) 52%,var(--t-secondary));
+  box-shadow:0 0 15px color-mix(in srgb,var(--t-glow-a) 55%,transparent);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-atmosphere-veil {
+  background:linear-gradient(90deg,transparent 0%,transparent 57%,color-mix(in srgb,var(--t-scene-c) 10%,transparent) 100%);
+}
+html[data-noxi-theme]:not([data-noxi-theme='marshmallow-galaxy']) .noxi-energy-glow {mix-blend-mode:screen;}
+html[data-noxi-theme='punk-inferno'] .noxi-energy-glow,
+html[data-noxi-theme='cotton-candy-skies'] .noxi-energy-glow {mix-blend-mode:multiply;}
+
+/* Settings theme-gallery. Its swatches are the literal palette colors,
+   independent of the selected UI, so the user can compare all seven. */
+.noxi-theme-panel {margin-bottom:23px;}
+.noxi-theme-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:22px;}
+.noxi-theme-card {
+  text-align:left;border-radius:18px;border:1px solid var(--t-edge,#e7dcef);
+  background:var(--t-pane,#ffffff);padding:9px;min-width:0;overflow:hidden;
+  transition:transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .25s,border-color .25s;
+  color:var(--t-ink,#382750);position:relative;
+}
+.noxi-theme-card:hover {transform:translateY(-4px);box-shadow:0 13px 27px color-mix(in srgb,var(--t-primary,#7955e8) 17%,transparent);}
+.noxi-theme-card.is-selected {border-color:var(--t-primary,#7955e8);box-shadow:0 0 0 2px color-mix(in srgb,var(--t-primary,#7955e8) 25%,transparent);}
+.noxi-theme-preview {display:block;height:114px;position:relative;overflow:hidden;border-radius:11px;isolation:isolate;}
+.noxi-preview-halo {position:absolute;left:-15%;top:-28%;width:94%;height:147%;filter:blur(21px);opacity:.92;}
+.noxi-preview-halo-two {left:40%;top:7%;}
+.noxi-preview-player {position:absolute;left:13%;right:13%;bottom:13px;height:45px;border-radius:10px;display:flex;align-items:center;gap:8px;padding:7px;backdrop-filter:blur(10px);border:1px solid #ffffff35;}
+.noxi-preview-disc {width:30px;height:30px;flex:0 0 30px;border-radius:7px;box-shadow:0 2px 9px #0002;}
+.noxi-preview-lines {flex:1;display:grid;gap:6px;}
+.noxi-preview-lines i {height:4px;width:100%;border-radius:7px;}
+.noxi-preview-lines i+ i {width:62%;}
+.noxi-preview-play {width:16px;height:16px;flex:0 0 16px;border-radius:50%;}
+.noxi-preview-swatches {position:absolute;left:9px;top:9px;display:flex;gap:5px;}
+.noxi-preview-swatches i {width:12px;height:12px;display:block;border-radius:50%;border:1px solid #ffffff99;box-shadow:0 1px 4px #0003;}
+.noxi-theme-check {position:absolute;right:9px;top:9px;width:25px;height:25px;border-radius:50%;background:var(--t-primary,#7955e8);color:var(--t-onprimary,#ffffff);display:grid;place-items:center;box-shadow:0 3px 10px #0003;}
+.noxi-theme-copy {display:grid;gap:5px;padding:12px 6px 10px;}
+.noxi-theme-copy strong {font:800 13px 'Outfit',sans-serif;color:var(--t-ink,#382750);}
+.noxi-theme-copy small {font-size:10px;line-height:1.45;color:var(--t-mute,#9280a7);min-height:28px;}
+.noxi-theme-card:focus-visible {outline:3px solid var(--t-primary,#7955e8);outline-offset:3px;}
+
+/* Smooth non-disruptive UI interpolation; animation reduces appropriately. */
+.app-shell,.sidebar,.player-bar,.track-list,.library-songs,.settings-panel,.top-search,.np-queue-panel,
+.np-overlay,.np-close,.noxi-scene-switch button,.noxi-theme-card,.view-tabs button,.scene-choice {
+  transition-property:background-color,color,border-color,box-shadow;
+  transition-duration:.42s;transition-timing-function:ease;
+}
+html[data-reduced-motion='true'] .app-shell,
+html[data-reduced-motion='true'] .sidebar,
+html[data-reduced-motion='true'] .np-overlay {transition:none!important;}
+@media (prefers-reduced-motion: reduce) {
+ .app-shell,.sidebar,.player-bar,.track-list,.library-songs,.settings-panel,.np-overlay,.noxi-theme-card{transition:none!important;}
+}
+@media(max-width:1150px) {.noxi-theme-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media(max-width:700px) {.noxi-theme-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}.noxi-theme-preview{height:95px;}}
+@media(max-width:395px) {.noxi-theme-grid{grid-template-columns:1fr;}.noxi-theme-preview{height:112px;}}

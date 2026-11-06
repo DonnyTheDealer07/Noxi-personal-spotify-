@@ -1,0 +1,207 @@
+/* NOXI — Three genuinely different GSAP-controlled immersive backgrounds.
+   Styling is CSS; scene crossfades and all decorative movement are GSAP. */
+
+.noxi-atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  isolation: isolate;
+  overflow: hidden;
+  pointer-events: none;
+  background: #f6edff;
+}
+
+.noxi-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0; /* GSAP sets the active scene to 1 before first paint. */
+  will-change: opacity;
+}
+
+/* AURORA — visible swathes of flowing violet, lilac and rose light. */
+.noxi-scene--aurora {
+  background:
+    radial-gradient(ellipse 75% 80% at 8% 63%, #c7a2f2 0%, transparent 73%),
+    radial-gradient(ellipse 70% 72% at 88% 82%, #f5acdb 0%, transparent 74%),
+    linear-gradient(118deg, #f2e5ff 2%, #ece3fb 51%, #fceaf6 100%);
+}
+.noxi-aurora-wash {
+  position: absolute; inset: -20%;
+  background:
+    radial-gradient(ellipse at 45% 20%, #ffffff88, transparent 37%),
+    radial-gradient(ellipse at 55% 95%, #ffabd57c, transparent 54%);
+}
+.noxi-aurora-ribbon {
+  position: absolute;
+  width: 119vw; min-width: 1000px;
+  border-radius: 50%;
+  filter: blur(44px);
+  transform-origin: center center;
+  will-change: transform;
+}
+.noxi-aurora-ribbon--one {
+  height: 37vh; left: -19%; top: 9%;
+  transform: rotate(-18deg);
+  background: linear-gradient(90deg, transparent, #a17beeb8 24%, #ad89ef9f 54%, #f1a4d2a6 82%, transparent);
+  opacity: .68;
+}
+.noxi-aurora-ribbon--two {
+  height: 31vh; left: -5%; top: 43%;
+  transform: rotate(13deg);
+  background: linear-gradient(90deg, transparent, #ffabd8cb 26%, #d4a8fa91 66%, #fcd9f16b, transparent);
+  opacity: .78;
+}
+.noxi-aurora-ribbon--three {
+  height: 28vh; left: 3%; bottom: -18%;
+  transform: rotate(-11deg);
+  background: linear-gradient(90deg, transparent, #c4b2ff78 22%, #a4a9ff93 59%, #ff9acaa1, transparent);
+  opacity: .59;
+}
+.noxi-aurora-bloom {
+  position: absolute; width: 48vw; height: 58vh; left: 6%; top: 9%;
+  filter: blur(76px); border-radius: 50%;
+  background: radial-gradient(ellipse, #c38dfb7d, transparent 68%);
+}
+
+/* DRIFT — distinctly cooler cyan-blue & peach liquid clouds. */
+.noxi-scene--drift {
+  background:
+    radial-gradient(ellipse at 20% 65%, #a4ddf2b0, transparent 68%),
+    radial-gradient(ellipse at 89% 19%, #f8b6cba6, transparent 64%),
+    linear-gradient(120deg, #e2f6fd 0%, #f1ebff 46%, #ffe7ee 100%);
+}
+.noxi-drift-cloud {
+  position: absolute;
+  border-radius: 46% 54% 60% 40% / 52% 33% 67% 48%;
+  filter: blur(56px);
+  opacity: .85;
+  will-change: transform;
+}
+.noxi-drift-cloud--a {
+  width: 64vw; height: 70vh; left: -20%; top: -22%;
+  background: radial-gradient(ellipse, #83c8eeaa, #aec9ff72 45%, transparent 77%);
+}
+.noxi-drift-cloud--b {
+  width: 55vw; height: 69vh; right: -15%; top: 6%;
+  background: radial-gradient(ellipse, #f5a6bbba, #ffb8d16d 44%, transparent 77%);
+}
+.noxi-drift-cloud--c {
+  width: 58vw; height: 75vh; left: 19%; bottom: -46%;
+  background: radial-gradient(ellipse, #9bbcffb5, #b5affb70 50%, transparent 79%);
+}
+.noxi-drift-cloud--d {
+  width: 35vw; height: 46vh; left: 35%; top: 10%;
+  background: radial-gradient(ellipse, #ffffffca, #d5bafb7e 54%, transparent 78%);
+  opacity: .57;
+}
+.noxi-drift-light {
+  position: absolute;
+  width: 85vw; height: 19vh;
+  min-height: 90px;
+  border-radius: 50%; filter: blur(34px);
+  will-change: transform;
+}
+.noxi-drift-light--a {
+  left: -30%; top: 20%; transform: rotate(-22deg);
+  background: linear-gradient(90deg, transparent, #f7fbffb3, #c8e5ffbd, transparent);
+  opacity: .66;
+}
+.noxi-drift-light--b {
+  right: -30%; bottom: 8%; transform: rotate(14deg);
+  background: linear-gradient(90deg, transparent, #ffffffac, #e8c9f5bf, transparent);
+  opacity: .62;
+}
+
+/* STARDUST — a contrasting lavender-twilight sky with visible stars.
+   The right remains light for readable controls and typography. */
+.noxi-scene--stardust {
+  background:
+    radial-gradient(ellipse at 17% 39%, #8f7bbf 0%, transparent 60%),
+    radial-gradient(ellipse at 32% 92%, #c18dda99 0%, transparent 62%),
+    linear-gradient(105deg, #8b7fb2 0%, #c5b6e1 42%, #f0e6f8 75%, #f9e9f4 100%);
+}
+.noxi-stardust-cloud {
+  position: absolute;
+  border-radius: 50%; filter: blur(65px);
+  will-change: transform;
+}
+.noxi-stardust-cloud--a {
+  width: 65vw; height: 77vh; top: -28%; left: -8%;
+  background: radial-gradient(ellipse, #645c9c95, #a17ad575 53%, transparent 78%);
+}
+.noxi-stardust-cloud--b {
+  width: 48vw; height: 60vh; left: 13%; bottom: -36%;
+  background: radial-gradient(ellipse, #ef9dce91, transparent 70%);
+}
+.noxi-stardust-glimmer {
+  position: absolute; height: 18vh; width: 90vw;
+  min-height: 100px; border-radius: 50%;
+  filter: blur(45px); opacity: .48;
+  will-change: transform;
+}
+.noxi-stardust-glimmer--a {
+  top: 24%; left: -24%; transform: rotate(-18deg);
+  background: linear-gradient(90deg, transparent, #caa7ffc9, #9cc0fa91, transparent);
+}
+.noxi-stardust-glimmer--b {
+  bottom: 14%; right: -15%; transform: rotate(15deg);
+  background: linear-gradient(90deg, transparent, #ffc0e4b7, #d8b3e49c, transparent);
+}
+.noxi-specks { position: absolute; inset: 0; }
+.noxi-speck {
+  position: absolute; display: block;
+  background: #fff;
+  border-radius: 50%;
+  opacity: .55;
+  box-shadow: 0 0 7px #fff, 0 0 15px #fff9, 0 0 24px #ad7cfa8a;
+  will-change: transform, opacity;
+}
+.noxi-speck:nth-child(7n) {
+  background: #fbd3f5;
+  box-shadow: 0 0 8px #fceaff, 0 0 22px #f7b4ef;
+}
+.noxi-speck:nth-child(13n) { width: 5px !important; height: 5px !important; }
+
+/* The artwork adds a little color to all three scenes, without flattening
+   their different base compositions into the same blurred album gradient. */
+.noxi-ambient-cover {
+  position: absolute; inset: -24%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(125px) saturate(1.35);
+  opacity: .11;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.noxi-atmosphere-veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, #fff8ff06 0%, #fff8ff08 48%, #fffafd33 100%);
+}
+.noxi-atmosphere--vivid .noxi-scene { filter: saturate(1.2) contrast(1.035); }
+.noxi-atmosphere--subtle .noxi-scene { filter: saturate(.92); }
+
+/* Non-audio-reactive ambient bars remain soft, discreet and legible. */
+.noxi-ambient-bars {
+  position: absolute; bottom: 4%; left: 50%; transform: translateX(-50%);
+  height: 29px; display: flex; align-items: center; justify-content: center; gap: 4px;
+  opacity: .26;
+}
+.noxi-ambient-bars i {
+  display: block; width: 3px; height: 19px;
+  border-radius: 99px;
+  background: linear-gradient(#8656d6, #e274bd);
+  transform-origin: center;
+}
+.noxi-atmosphere[data-scene='stardust'] .noxi-ambient-bars { opacity: .33; }
+.noxi-atmosphere[data-scene='drift'] .noxi-ambient-bars { opacity: .2; }
+
+@media (max-width: 680px) {
+  .noxi-aurora-ribbon { filter: blur(52px); }
+  .noxi-drift-cloud, .noxi-stardust-cloud { filter: blur(46px); }
+  .noxi-ambient-bars { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .noxi-scene, .noxi-ambient-cover { will-change: auto; }
+}

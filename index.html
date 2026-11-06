@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="theme-color" content="#f8f4ff"/><meta name="description" content="NOXI — your music, your universe. A personal Spotify-powered music experience."/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/><title>NOXI — Your music, your universe</title>  <script>
+    // Apply a saved dark theme before React paints to prevent a white flash.
+    try {
+      const saved = JSON.parse(localStorage.getItem('noxi.preferences.v1') || '{}');
+      const allowed = ['marshmallow-galaxy','royal-ember','abyssal-bloom','punk-inferno','cotton-candy-skies','wildwood','sakura-noir'];
+      if (allowed.includes(saved.theme)) {
+        document.documentElement.dataset.noxiTheme = saved.theme;
+        document.documentElement.style.colorScheme = ['royal-ember','abyssal-bloom','wildwood','sakura-noir'].includes(saved.theme) ? 'dark' : 'light';
+      }
+    } catch { /* Use NOXI's default appearance */ }
+  </script>
+</head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>

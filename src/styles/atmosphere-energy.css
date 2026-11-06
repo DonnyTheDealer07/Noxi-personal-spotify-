@@ -1,0 +1,185 @@
+/* NOXI 1.1 · Stronger, clearly differentiated immersive scenes.
+   Movement comes from GSAP, not CSS keyframes or Spotify audio analysis. */
+
+.noxi-atmosphere {
+  --energy-violet: #8c5dff;
+  --energy-rose: #ef6dbd;
+  --energy-ice: #8cbbff;
+}
+
+.noxi-scene--aurora {
+  background:
+    radial-gradient(ellipse 72% 83% at 5% 54%, #a47be7 0%, transparent 78%),
+    radial-gradient(ellipse 55% 75% at 86% 77%, #ffa1d0 0%, transparent 75%),
+    linear-gradient(110deg, #c6b1ed 0%, #e3d1fc 47%, #fbe1f3 100%);
+}
+.noxi-aurora-ribbon--one {
+  opacity: .95; filter: blur(32px);
+  background: linear-gradient(90deg, transparent, #8550d7dd 28%, #a46af2df 53%, #ff8bc7bf 82%, transparent);
+}
+.noxi-aurora-ribbon--two {
+  opacity: .9; filter: blur(37px);
+  background: linear-gradient(90deg, transparent, #f779b9d9 27%, #d49affc9 55%, #f4bfefa6, transparent);
+}
+.noxi-aurora-ribbon--three {
+  opacity: .78; filter: blur(37px);
+  background: linear-gradient(90deg, transparent, #a098ffb3 20%, #8d9dffbf 62%, #ff8ac4cf, transparent);
+}
+.noxi-aurora-bloom { background: radial-gradient(ellipse, #aa60f3ac, transparent 70%); filter: blur(56px); }
+
+.noxi-scene--drift {
+  background:
+    radial-gradient(ellipse at 8% 64%, #8fdbf0 0%, transparent 65%),
+    radial-gradient(ellipse at 89% 12%, #ffabc3c9 0%, transparent 68%),
+    linear-gradient(105deg, #b6e8f4 0%, #d8ddff 50%, #ffdaea 100%);
+}
+.noxi-drift-cloud { filter: blur(39px); opacity: .95; }
+.noxi-drift-cloud--a { background: radial-gradient(ellipse, #5fbfefeb, #8db7f6b3 48%, transparent 79%); }
+.noxi-drift-cloud--b { background: radial-gradient(ellipse, #ff86b6d9, #ffb1cdc4 48%, transparent 79%); }
+.noxi-drift-cloud--c { background: radial-gradient(ellipse, #839dffdc, #9cc4ffc1 55%, transparent 79%); }
+.noxi-drift-cloud--d { opacity: .62; }
+.noxi-drift-light { filter: blur(20px); opacity: .86; }
+
+.noxi-scene--stardust {
+  background:
+    radial-gradient(ellipse 65% 90% at -5% 32%, #7562ad 0%, transparent 75%),
+    radial-gradient(ellipse 50% 74% at 32% 83%, #a07cc9b5 0%, transparent 75%),
+    linear-gradient(108deg, #7765aa 0%, #b39ad6 37%, #e7d4f2 70%, #f9e4f1 100%);
+}
+.noxi-stardust-cloud--a {
+  background: radial-gradient(ellipse, #563d9dc2, #9466d7ad 53%, transparent 78%);
+  filter: blur(46px);
+}
+.noxi-stardust-cloud--b {
+  background: radial-gradient(ellipse, #ef7cbdc8, transparent 75%);
+  filter: blur(50px);
+}
+.noxi-speck {
+  opacity: .88;
+  background: #ffffff;
+  box-shadow: 0 0 8px #fff, 0 0 22px #fff9, 0 0 35px #dcacff;
+}
+.noxi-speck:nth-child(4n) { background: #ffc2ed; box-shadow: 0 0 13px #ffb0e5, 0 0 25px #ed8ede; }
+
+/* All three scenes gain a colorful foreground glow behind the album art,
+   but the right-hand song title and controls stay legible. */
+.noxi-energy-field {
+  position: absolute;
+  left: -9%;
+  top: 7%;
+  width: 68%;
+  height: 90%;
+  pointer-events: none;
+  z-index: 2;
+  transform: translateZ(0);
+}
+.noxi-energy-glow {
+  position: absolute;
+  display: block;
+  width: 70%;
+  height: 66%;
+  border-radius: 44%;
+  transform-origin: center;
+  filter: blur(60px);
+  will-change: transform, opacity;
+  mix-blend-mode: multiply;
+}
+.noxi-energy-glow--violet {
+  top: 1%; left: 4%;
+  background: radial-gradient(ellipse, #7950efc5 0%, #bc7af879 46%, transparent 75%);
+}
+.noxi-energy-glow--rose {
+  right: -3%; bottom: -8%;
+  background: radial-gradient(ellipse, #ed6bbea9 0%, #ffbadb6e 52%, transparent 78%);
+}
+.noxi-energy-glow--ice {
+  width: 58%; height: 52%;
+  left: 4%; bottom: 6%;
+  background: radial-gradient(ellipse, #77a6ef92 0%, transparent 75%);
+}
+.noxi-energy-flare {
+  position: absolute;
+  display: block;
+  width: 85%;
+  height: 11%;
+  border-radius: 50%;
+  filter: blur(24px);
+  opacity: .55;
+  will-change: transform, opacity;
+}
+.noxi-energy-flare--one {
+  left: 8%; top: 19%;
+  background: linear-gradient(90deg, transparent, #ce9bf5c9, #f791cbd1, transparent);
+  transform: rotate(-17deg);
+}
+.noxi-energy-flare--two {
+  bottom: 16%; left: 1%;
+  background: linear-gradient(90deg, transparent, #a78df0ae, #96ceffb8, transparent);
+  transform: rotate(14deg);
+}
+.noxi-atmosphere[data-scene='drift'] {
+  --energy-violet: #6098ef;
+  --energy-rose: #f07dba;
+  --energy-ice: #69c7de;
+}
+.noxi-atmosphere[data-scene='drift'] .noxi-energy-glow--violet {
+  background: radial-gradient(ellipse, #6caff0c0, #92d9ff7a 48%, transparent 76%);
+}
+.noxi-atmosphere[data-scene='stardust'] .noxi-energy-glow--violet {
+  background: radial-gradient(ellipse, #a780ffbd, #b991e68b 48%, transparent 75%);
+}
+.noxi-ambient-cover { mix-blend-mode: soft-light; }
+.noxi-atmosphere-veil { background: linear-gradient(90deg, #fff8ff00 0%, #fff8ff08 55%, #fffafd21 100%); }
+.noxi-atmosphere--subtle .noxi-scene { filter: saturate(1.04) contrast(1.02); }
+.noxi-atmosphere--vivid .noxi-scene { filter: saturate(1.34) contrast(1.06); }
+.noxi-atmosphere--subtle .noxi-energy-field { opacity: .75; }
+.noxi-atmosphere--vivid .noxi-energy-field { opacity: 1; }
+
+/* A bold, animated accent near the bottom, clearly visible unlike the old 17 bars. */
+.noxi-ambient-bars {
+  left: 50%; bottom: 4%;
+  gap: 5px;
+  height: 58px;
+  opacity: .78;
+  z-index: 4;
+  align-items: center;
+}
+.noxi-ambient-bars i {
+  width: 4px;
+  height: 40px;
+  background: linear-gradient(to top, #7652cb, #a36ce9 58%, #f67ccb);
+  box-shadow: 0 0 12px #9c6bea44;
+}
+.noxi-atmosphere[data-scene='stardust'] .noxi-ambient-bars { opacity: .83; }
+.noxi-atmosphere[data-scene='drift'] .noxi-ambient-bars { opacity: .77; }
+
+@media (max-width: 900px) {
+  .noxi-energy-field { left: -20%; width: 80%; opacity: .62; }
+  .noxi-energy-glow { filter: blur(37px); }
+  .noxi-ambient-bars { bottom: 1.5%; opacity: .55; height: 40px; }
+}
+@media (max-width: 680px) {
+  .noxi-energy-field { left: -12%; width: 120%; height: 55%; top: 0; }
+  .noxi-energy-glow { filter: blur(29px); }
+  .noxi-ambient-bars { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .noxi-energy-glow, .noxi-energy-flare { will-change: auto; }
+}
+
+
+/* Accessible one-click intensity control in Now Playing. */
+.noxi-scene-switch button.noxi-intensity-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #a67de6;
+  background: #f9eeffdb;
+  color: #7442aa;
+}
+.noxi-scene-switch button.noxi-intensity-toggle[aria-pressed='true'] {
+  border-color: #9763e6;
+  background: linear-gradient(120deg, #9160e7, #dc70bd);
+  color: #fff;
+  box-shadow: 0 6px 19px #aa77e35c;
+}

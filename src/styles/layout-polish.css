@@ -1,0 +1,148 @@
+/* NOXI 3.0 — one cohesive light theme. Dock is in document layout, not over songs. */
+:root { color-scheme: light; }
+body { background: #f8f5fc; }
+.app-shell { min-height: 0; height: 100dvh; background: radial-gradient(ellipse 75% 65% at 82% -18%, #e9dbffb5, transparent 75%), #f9f6ff; }
+.main-layout { min-height: 0; }
+.content-area { min-height: 0; }
+.scroll-page { padding-bottom: 0; scrollbar-width: thin; scrollbar-color: #d7c8eb transparent; }
+.scroll-page::-webkit-scrollbar { width: 6px; }
+.scroll-page::-webkit-scrollbar-thumb { background: #d7c8eb; border-radius: 20px; }
+.sidebar { background: #fdfbffef; scrollbar-width: thin; scrollbar-color: #d9ccec transparent; }
+.sidebar::-webkit-scrollbar { width: 5px; }
+.sidebar::-webkit-scrollbar-thumb { background: #d9ccec; border-radius: 8px; }
+.logo-mark { box-shadow: 0 6px 15px #9f78de45; }
+.side-mini-card { min-width: 0; }
+.side-mini-card>span { min-width: 0; }
+.side-mini-card:focus-visible { outline-offset: -3px; }
+.sidebar-upgrade { box-shadow: none; }
+.topbar { min-height: 76px; height: 76px; }
+.top-context { font-size: 12px; color: #8c79a2; }
+.top-search input { font-size: 12px; }
+.page { padding-bottom: 45px; }
+.standard-page { padding-top: 7px; }
+.page-heading { padding-top: 8px; padding-bottom: 24px; }
+.page-heading h1 { font-size: clamp(33px, 3.4vw, 47px); margin: 11px 0 10px; }
+.page-heading>p { color: #7f6c94; }
+.eyebrow { color: #917eaa; }
+/* Consistent song lists on Home, Discover, Library and Playlist */
+.track-list, .library-songs {
+  background: #fffdffdf; padding: 5px 12px; border: 1px solid #e8ddf2;
+  border-radius: 16px; box-shadow: 0 8px 26px #7a639f10; margin-bottom: 18px;
+}
+.library-songs .track-row, .track-list .track-row, .search-results .track-row {
+  display: grid; grid-template-columns: 30px 42px minmax(115px, 1.4fr) minmax(80px, 1fr) 44px 22px 36px;
+  gap: 12px; align-items: center; min-width: 0;
+  border-radius: 8px; padding: 9px 12px; border-bottom: 1px solid #f0e9f5;
+  background: transparent; transition: background .18s;
+}
+.library-songs .track-row:last-child, .track-list .track-row:last-child { border-bottom: none; }
+.library-songs .track-row:hover, .track-list .track-row:hover, .search-results .track-row:hover { background: #f2eafb; }
+.track-row .artwork { width: 42px; height: 42px; border-radius: 7px; }
+.track-title strong { font-size: 13px; color: #453052; }
+.track-title span, .track-album, .track-duration { color: #83718e; font-size: 11px; }
+.track-duration { color: #746382; }
+.track-index { color: #a08cad; font-size: 11px; }
+.track-heading {
+  display: grid; grid-template-columns: 30px 42px minmax(115px,1.4fr) minmax(80px,1fr) 44px 22px 36px;
+  gap: 12px; padding: 15px 12px 12px; font-size: 10px; color: #917fa5;
+  border-bottom: 1px solid #e7dcef; margin: 0 0 3px;
+}
+.track-heading>span:nth-child(1) { grid-column: 1; text-align: center; }
+.track-heading>span:nth-child(2) { grid-column: 3; }
+.track-heading>span:nth-child(3) { grid-column: 4; }
+.track-heading>span:nth-child(4) { grid-column: 5; text-align: right; }
+.track-play { border-radius: 9px; background: #eee5fc; color: #7950d7; }
+.track-play:hover:enabled { background: #7950d7; color: #fff; }
+.track-external { color: #9b86b2; }
+.library-toolbar { margin-bottom: 17px; }
+.view-tabs button { border-radius: 11px; padding: 10px 15px; }
+.view-tabs button.selected { box-shadow: 0 5px 14px #ad8ddd30; }
+.library-filter, .library-sort { border-radius: 10px; }
+/* Fixed-bottom player is replaced with an actual row of the main layout. */
+.player-wrap {
+  position: relative; inset: auto; bottom: auto; left: auto; right: auto;
+  z-index: 15; flex: 0 0 auto; padding: 9px 22px 13px; pointer-events: auto;
+  background: linear-gradient(to bottom, #f9f5ff00, #f9f5ffdd 35%);
+}
+.player-bar {
+  position: relative; height: 79px; display: grid;
+  grid-template-columns: minmax(175px,1fr) minmax(220px,1.13fr) minmax(150px,.82fr) 35px;
+  align-items: center; gap: 15px; padding: 9px 18px;
+  background: #fffdfdf2; border: 1px solid #e8def3;
+  border-radius: 16px; box-shadow: 0 8px 30px #9e80b528;
+  backdrop-filter: blur(20px);
+}
+.playing-info { min-width: 0; }
+.np-open-now { display: flex; gap: 12px; align-items: center; min-width: 0; width: 100%; text-align: left; padding: 0; border: 0; background: transparent; }
+.np-open-now .artwork { width: 51px; height: 51px; flex: 0 0 51px; border-radius: 10px; }
+.np-open-now .playing-info-text { flex: 1; min-width: 0; }
+.np-open-now:hover .playing-info-text strong { color: #754fd4; }
+.playing-info-text strong { font-size: 13px; }
+.playing-info-text span { color: #8c789f; font-size: 11px; }
+.playing-badge { flex: 0 0 auto; color: #a581df; }
+.player-center { gap: 2px; }
+.player-buttons { gap: 22px; }
+.player-buttons .player-main-btn { width: 41px; height: 41px; border-radius: 12px; box-shadow: 0 4px 14px #a481d04b; }
+.player-progress { max-width: 345px; }
+.player-progress>span { color: #8c789d; font-size: 10px; font-variant-numeric: tabular-nums; }
+.player-progress input, .player-right input { accent-color: #915be6; }
+.player-right { display: flex; align-items: center; justify-content: flex-end; gap: 9px; min-width: 0; }
+.output-device { display: flex; align-items: center; gap: 6px; white-space: nowrap; color: #927fa4; font-size: 10px; }
+.volume-icon { flex: 0 0 auto; }
+.player-right input { min-width: 42px; max-width: 90px; }
+.np-expand-dock {
+  position: static; transform: none; width: 35px; height: 35px; display: grid; place-items: center;
+  border: 0; border-radius: 10px; background: #f0e7fc; color: #7951b7;
+}
+.np-expand-dock:hover { background: #e6d4fb; color: #6a3eb1; }
+/* Make all views feel related without overloading them with glows */
+.playlist-card-link { border-radius: 13px; }
+.playlist-card-link>.artwork { border-radius: 13px; }
+.bottom-feature { box-shadow: 0 8px 24px #a984c829; }
+.playlist-hero { box-shadow: 0 8px 30px #9f84be24; }
+.preferences-intro { margin-top: 0; }
+@media (max-width: 1150px) {
+  .player-wrap { padding: 8px 15px 12px; }
+  .player-bar { grid-template-columns: minmax(145px,1fr) minmax(200px,1.1fr) minmax(55px,.4fr) 35px; padding: 9px 12px; }
+  .output-device { display: none; }
+  .track-list .track-row, .library-songs .track-row { gap: 9px; }
+}
+@media (max-width: 830px) {
+  .app-shell { min-height: 0; }
+  .sidebar { bottom: 0; }
+  .scroll-page { padding-bottom: 0; }
+  .player-wrap { margin-bottom: 66px; padding: 6px 10px 8px; }
+  .player-bar { height: 74px; grid-template-columns: minmax(0,1fr) minmax(170px,.8fr) 35px; }
+  .player-right { display: none; }
+  .topbar { height: 69px; min-height: 69px; }
+}
+@media (max-width: 650px) {
+  .page { padding-left: 18px; padding-right: 18px; }
+  .player-wrap { padding: 5px 7px 8px; }
+  .player-bar { grid-template-columns: minmax(0,1fr) 106px 31px; gap: 6px; padding: 8px 10px; height: 66px; border-radius: 13px; }
+  .np-open-now .artwork { width: 39px; height: 39px; flex-basis: 39px; }
+  .playing-info-text strong { font-size: 11px; }
+  .playing-info-text span { font-size: 9px; }
+  .player-buttons { gap: 3px; }
+  .player-buttons>button { width: 21px; }
+  .player-buttons .player-main-btn { width: 33px; height: 33px; border-radius: 10px; }
+  .player-progress { gap: 4px; }
+  .player-progress>span { font-size: 8px; }
+  .np-expand-dock { width: 30px; height: 30px; }
+  .track-list .track-row, .library-songs .track-row, .search-results .track-row { grid-template-columns: 22px 39px minmax(0,1fr) 31px; gap: 8px; padding: 9px 5px; }
+  .track-heading { display: none; }
+  .track-row .artwork { width: 39px; height: 39px; }
+  .track-album, .track-duration, .track-external { display: none; }
+}
+
+
+.playlist-order-note {
+  margin: 15px 0 8px;
+  padding: 11px 15px;
+  color: #725689;
+  background: #f3eaffb5;
+  border: 1px solid #e7d9f5;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+}
